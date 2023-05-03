@@ -1,0 +1,21 @@
+..Spring boot starter parent...
+===> maven defaults defined in started parent
+---Default compiler level
+---UTF-8 source encoding
+--many more---------------->====
+
+
+....Spring-boot-devtools starter------------->
+==>Automatically restarts your application when code is updated 
+..need to add dependency in pom file------->
+
+=====>spring boot actuator<===========
+.exposes endpoints 
+-==>/health --check the status of the application
+===>/info -- provides info about the application
+in application properties===>
+
+>management.endpoints.web.exposure.include=health,info => =* exposes all the endpoints
+>management.info.env.true=enabled
+
+=====>injecting custom properties<=============
