@@ -1,7 +1,9 @@
 package com.example.springBoot_IOC.rest;
 
+import com.example.springBoot_IOC.CricketCoach;
 import com.example.springBoot_IOC.coach.Mycoach;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
 
     //field injection
-    @Autowired
     private Mycoach mycoach;
     //setter injection
     /*@Autowired
@@ -18,11 +19,14 @@ public class DemoController {
         this.mycoach=mycoach;
     }*/
     //constructor injection
-    /*public DemoController(Mycoach mycoach)
+
+    //using qualifier
+    @Autowired
+    public DemoController(@Qualifier("footballCoach") Mycoach mycoach)
     {
         this.mycoach=mycoach;
-    }*/
-    @GetMapping("/cricket")
+    }
+    @GetMapping("/coach")
     public String coach()
     {
         return mycoach.getDailyworkout();
