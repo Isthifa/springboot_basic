@@ -29,3 +29,21 @@ server.port=1010
 server.servlet.context.path=/myapp
 
 
+=====>>Inversion of controll<===========
+[Aproch of outsourcing the construction and management of objects]
+
+======>>Dependency injection<=====
+[dependences injection makes use of dependency inversion princple
+the client delegates to another object the responsibility of providing its depenecies ]
+
+for dependency injection spring use autowire annotation
+
+===============>Qualifier<================
+Could not autowire. There is more than one bean of 'Mycoach' type.
+ 
+===============>Primary<===================
+
+@Lazy initialization
+bean will initialized only when it is need, is created which is needed
+
+
