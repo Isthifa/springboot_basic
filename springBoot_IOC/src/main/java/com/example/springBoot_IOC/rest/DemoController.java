@@ -7,13 +7,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class DemoController {
+
+    //field injection
+    @Autowired
     private Mycoach mycoach;
     //setter injection
-    @Autowired
+    /*@Autowired
     public void setMycoach(Mycoach mycoach)
     {
         this.mycoach=mycoach;
-    }
+    }*/
     //constructor injection
     /*public DemoController(Mycoach mycoach)
     {
