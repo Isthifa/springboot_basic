@@ -19,3 +19,13 @@ in application properties===>
 >management.info.env.true=enabled
 
 =====>injecting custom properties<=============
+injecting custom properties using @value annotation
+<In Spring Boot, value annotations are used to inject values into variables or fields of a Spring bean.>
+The @Value annotation is used to wire a property value directly into a field or method parameter
+
+=>>>>>>>configuring server port<=========
+server.port=1010
+
+server.servlet.context.path=/myapp
+
+
