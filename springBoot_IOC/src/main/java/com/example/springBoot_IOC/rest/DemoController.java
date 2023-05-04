@@ -12,6 +12,7 @@ public class DemoController {
 
     //field injection
     private Mycoach mycoach;
+    private Mycoach anothercoach;
     //setter injection
     /*@Autowired
     public void setMycoach(Mycoach mycoach)
@@ -22,14 +23,16 @@ public class DemoController {
 
     //using qualifier
     @Autowired
-    public DemoController(@Qualifier("swimming") Mycoach mycoach)
+    public DemoController(@Qualifier("swimCoach") Mycoach mcoach,
+                          @Qualifier("swimCoach") Mycoach thecoach)
     {
-        this.mycoach=mycoach;
+        mycoach=mcoach;
+        anothercoach=thecoach;
     }
     @GetMapping("/coach")
     public String coach()
     {
-        return mycoach.getDailyworkout();
+        return "comparing the bean = "+(mycoach==anothercoach);
     }
 
 }

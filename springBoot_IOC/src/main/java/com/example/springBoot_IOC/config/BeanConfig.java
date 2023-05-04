@@ -6,14 +6,14 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
-@Configuration
+//@Configuration
 //This annotation is used to mark a class as a configuration class.
 //Configuration classes are used to define beans and their dependencies.
-public class BeanConfig {
+/*public class BeanConfig {
 
     @Bean("swimming")
     //configured as spring bean using @Bean annotation
     public Mycoach swimCoach(){
         return new SwimCoach();
     }
-}
+}*/
