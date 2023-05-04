@@ -11,6 +11,6 @@ public class TennisCoach implements Mycoach {
     }
     @Override
     public String getDailyworkout() {
-        return null;
+        return "this is tennis coach";
     }
 }
