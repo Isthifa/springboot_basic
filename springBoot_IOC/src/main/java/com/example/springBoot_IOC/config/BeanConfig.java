@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 //Configuration classes are used to define beans and their dependencies.
 public class BeanConfig {
 
-    @Bean
+    @Bean("swimming")
     //configured as spring bean using @Bean annotation
     public Mycoach swimCoach(){
         return new SwimCoach();

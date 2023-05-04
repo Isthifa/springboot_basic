@@ -22,7 +22,7 @@ public class DemoController {
 
     //using qualifier
     @Autowired
-    public DemoController(@Qualifier("swimCoach") Mycoach mycoach)
+    public DemoController(@Qualifier("swimming") Mycoach mycoach)
     {
         this.mycoach=mycoach;
     }
