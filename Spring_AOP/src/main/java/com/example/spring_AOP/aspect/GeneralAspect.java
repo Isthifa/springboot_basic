@@ -1,8 +1,7 @@
 package com.example.spring_AOP.aspect;
 
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import com.example.spring_AOP.entity.Topics;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 @Aspect
@@ -20,5 +19,17 @@ public class GeneralAspect {
     public void afterAddvalue()
     {
         System.out.println("Executing @After Advice");
+    }
+
+    @AfterReturning(value = "execution(* com.example.spring_AOP.controller.*.*(..))",returning = "topics")
+    public void afterReturning(Topics topics)
+    {
+        System.out.println("After Returning "+topics.getId());
+    }
+
+    @AfterThrowing(value = "execution(* com.example.spring_AOP.controller.*.*(..))",throwing = "e")
+    public void afterThrowing(Exception e)
+    {
+        System.out.println("After Throwing = "+e.getMessage());
     }
 }
