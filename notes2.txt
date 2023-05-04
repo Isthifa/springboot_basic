@@ -39,11 +39,89 @@ the client delegates to another object the responsibility of providing its depen
 for dependency injection spring use autowire annotation
 
 ===============>Qualifier<================
+>.classname first letter must be lower case;
 Could not autowire. There is more than one bean of 'Mycoach' type.
  
 ===============>Primary<===================
+>.@primary annotation must be above the class name;
 
 @Lazy initialization
-bean will initialized only when it is need, is created which is needed
+bean will initialized only if it is needed, created which is needed
+application properties:
+spring.main.lazy-initialization=true;
+
+===========>Bean Scopes<==============
+default scope of bean is single ton<===========
+<=======Explicitly Specify Bean scope===>
+@Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
+
+==>Scope<=====
+singleton create a single shared instance of bean. default scope
+
+prototye create a new bean instance for each container request.
+
+request Scoped to an http web request. only used for web apps
+
+session Scoped to an http web session. only used for web apps
+
+global session scoped to global http web sesion. only used for web apps
+
+==>Bean life cycle<=============
+@PostConstruct
+Spring calls the methods annotated with @PostConstruct only once, just after the initialization of bean properties
+@PreDestroy
+
+java config bean configuration=========>
+@Configuration annotation 
+add @bean annotation to the method
+to give custom id =>@bean("name_youwanttogive");
 
 
+@Bean: This annotation is used to define a bean in a configuration class.
+@Autowired: This annotation is used to inject a bean into another bean
+@Configuration: This annotation is used to mark a class as a configuration class. 
+Configuration classes are used to define beans and their dependencies.
+@ComponentScan: This annotation is used to specify the packages to be scanned for components. 
+Components such as controllers, services, and repositories are automatically detected and registered as Spring beans
+@Value: This annotation is used to inject a value from the application.properties file into a field in a Spring bean.
+===============================
+SteroType annotation:>
+Stereotype annotations are a set of specialized annotations that are used to indicate the role or 
+purpose of a particular component within the application
+=========================================================
+@Component----This is the most basic stereotype annotation, indicating that a class is a Spring-managed component,  
+It is typically used to identify classes that have no specific role in the application, such as utility classes.
+
+@Controller--->This annotation is used to identify classes that handle HTTP requests in a Spring MVC application
+
+
+@Service ---->This annotation is used to identify classes that perform a service in the application. 
+It is often used to annotate classes that provide business logic or access to a database.
+
+@RestController-->: This is a combination of the @Controller and @ResponseBody annotations. 
+It is used to identify classes that handle HTTP requests and return response data in a RESTful web service.
+
+@Repository: This annotation is used to identify classes that access a database in the application. It is often 
+used to annotate classes that provide data access operations using Spring Data
+====================================================
+
+@PostConstruct to indicate that it should be executed after the bean has been constructed and 
+all dependencies have been injected
+
+@PreDestroy to indicate that it should be executed just before the bean is destroyed.=> executed after the program stopped
+
+
+=================>Spring boot AOP<======================
+>Aspect: 
+implemented using two ways xml and aspect annotation
+
+>Join point: A point during the execution of a program, such the execution of method or the handling of execption<
+
+>Pointcut :
+
+
+====>AOP Advice<======
+.Before advice - exceuted before join point
+.After running advice - advice to be executed after a join points
+.After throwing advice - 
+.After (finally)
