@@ -9,7 +9,8 @@ import org.springframework.stereotype.Component;
 
 //not used component annotation
 @Component
-@Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
+//Prototype
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class SwimCoach implements Mycoach{
 
     @Override
